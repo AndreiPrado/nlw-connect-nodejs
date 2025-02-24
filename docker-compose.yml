@@ -14,13 +14,3 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - "6379:6379"
-
-  backend:
-    build: .
-    env_file:
-      - .env
-    depends_on:
-      - connect-pg
-      - connect-redis
-    ports:
-      - "3333:3333"
